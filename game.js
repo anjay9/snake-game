@@ -10,8 +10,8 @@ const startGame = () => {
     apple: {style:"red", xPos:4, yPos:4}
   }
 
-  setInterval(function(){
-    moveSnake(elements, gridSize);
+  const gameLoop = setInterval(function(){
+    moveSnake(elements, gridSize, gameLoop);
     drawCanvas(context, canvas);
     drawElems(context, tileSize, elements);
   } ,1000/10);
